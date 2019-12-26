@@ -21,19 +21,13 @@ namespace  MyBlogProject.Business.ElasticSearchOptions
 
 
         private readonly IElasticSearchConfigration _elasticSearchConfigration;
-        /// <summary>
-        /// GetesClient
-        /// </summary>
-        /// <returns></returns>
+       
         private ElasticClient GetClient()
         {
             var str = _elasticSearchConfigration.ConnectionString;
             var strs = str.Split('|');
             var nodes = strs.Select(s => new Uri(s)).ToList();
 
-            //Pool yok
-            //var connectionPool = new SniffingConnectionPool(nodes);
-            // var connectionString = new ConnectionSettings(connectionPool);
             var connectionString = new ConnectionSettings(new Uri(str))
                 .DisablePing()
                 .SniffOnStartup(false)
@@ -44,12 +38,6 @@ namespace  MyBlogProject.Business.ElasticSearchOptions
 
             return new ElasticClient(connectionString);
         }
-        /// <summary>
-        /// CreateEsIndex Not Mapping
-        /// Auto Set Alias alias is Input IndexName
-        /// </summary>
-        /// <param name="indexName"></param>
-        /// <returns></returns>
         public virtual async Task CrateIndexAsync(string indexName)
         {
             var exis = await EsClient.IndexExistsAsync(indexName);
@@ -69,13 +57,6 @@ namespace  MyBlogProject.Business.ElasticSearchOptions
             }
             throw new ElasticSearchException($"Create Index {indexName} failed :" + result.ServerError.Error.Reason);
         }
-        /// <summary>
-        /// CreateEsIndex auto Mapping T Property and Suggest
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <returns></returns>
         public virtual async Task CreateIndexSuggestAsync<T, TKey>(string indexName) where T : ElasticEntity<TKey>
         {
             var exis = await EsClient.IndexExistsAsync(indexName);

@@ -10,13 +10,13 @@ namespace  MyBlogProject.Business.ObjectDtos.Post
     {
         public PostElasticIndexDto()
         {
-            TagNameValues = new List<string>();
+            TagNameValues = new HashSet<string>();
         }
         public Guid ObjectId { get { return Guid.NewGuid(); } }
         public string Title { get; set; }
         public string PostContent { get; set; }
         public string CategoryName { get; set; }
-        public List<string> TagNameValues { get; set; }
+        public ICollection<string> TagNameValues { get; set; }
         public string Url { get; set; }
 
 

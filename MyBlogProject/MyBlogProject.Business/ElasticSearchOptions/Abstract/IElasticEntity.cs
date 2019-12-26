@@ -4,9 +4,9 @@ using System.Text;
 
 namespace  MyBlogProject.Business.ElasticSearchOptions.Abstract
 {
-    public interface IElasticEntity<TPrimaryKey>
+    public interface IElasticEntity<TEntityKey>
     {
-        TPrimaryKey Id { get; set; }
+        TEntityKey Id { get; set; }
 
     }
 }
