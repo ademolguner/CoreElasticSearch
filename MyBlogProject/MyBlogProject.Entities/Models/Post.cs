@@ -1,10 +1,9 @@
-﻿using  MyBlogProject.Entites.Models;
-using  MyBlogProject.Core.Entities;
+﻿using MyBlogProject.Core.Entities;
+using MyBlogProject.Entites.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace  MyBlogProject.Entities.Models
+namespace MyBlogProject.Entities.Models
 {
     public class Post : IEntity
     {
@@ -14,8 +13,10 @@ namespace  MyBlogProject.Entities.Models
         public DateTime CreatedDate { get; set; }
         public bool IsActive { get; set; }
         public int CategoryId { get; set; }
+        public int UserId { get; set; }
         public int ReadCount { get; set; }
         public Category Category { get; set; }
         public List<Comment> Comments { get; set; }
+        public User User { get; set; }
     }
 }

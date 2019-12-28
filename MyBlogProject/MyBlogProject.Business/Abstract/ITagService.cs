@@ -1,23 +1,24 @@
-﻿using  MyBlogProject.Entities.Models;
-using  MyBlogProject.Entities.ComplexTypes;
+﻿using MyBlogProject.Core.Business.EntityRepository;
+using MyBlogProject.Entities.ComplexTypes;
+using MyBlogProject.Entities.Models;
 using System.Collections.Generic;
 
-namespace  MyBlogProject.Business.Abstract
+namespace MyBlogProject.Business.Abstract
 {
-    public interface ITagService
+    public interface ITagService : IEntityCommonRepository<Tag>
     {
-        List<Tag> GetAllTags();
+        //List<Tag> GetAllTags();
 
-        Tag GetTagById(int id);
+        //Tag GetTagById(int id);
 
-        Tag AddTag(Tag tag);
+        //Tag AddTag(Tag tag);
 
-        Tag UpdateTag(Tag tag);
+        //Tag UpdateTag(Tag tag);
 
-        void DeleteTag(Tag tag);
+        //void DeleteTag(Tag tag);
         List<PostTagDto> PostTagListForPost(int postID);
 
-        // Burada yazılan metotlar iş kuralları gereğince gelen 
+        // Burada yazılan metotlar iş kuralları gereğince gelen
         // ihtiyaçlara karşılık verebilmek için değişkenlik
         // gösterecektir.
         // Ben örnek olması için sadece olası bir kaç metot yazıp

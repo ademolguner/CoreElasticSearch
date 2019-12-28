@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyBlogProject.Business\MyBlogProject.Business.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Content\assets\apps\img\" />
+    <Folder Include="Content\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
+    <Folder Include="Content\assets\global\plugins\jquery-file-upload\server\node\public\files\thumbnail\" />
+    <Folder Include="Content\assets\global\plugins\jquery-file-upload\server\node\tmp\" />
+    <Folder Include="Content\assets\global\plugins\jquery-file-upload\server\php\files\thumbnail\" />
+    <Folder Include="Content\MakaleEkleri\0\MakaleDosyalari\" />
+    <Folder Include="Content\MakaleEkleri\17\MakaleDosyalari\" />
+    <Folder Include="Content\MakaleEkleri\18\MakaleDosyalari\" />
+    <Folder Include="Content\MakaleEkleri\40\MakaleDosyalari\" />
+    <Folder Include="Content\MakaleEkleri\41\MakaleDosyalari\" />
+    <Folder Include="Content\MakaleEkleri\42\MakaleDosyalari\" />
+    <Folder Include="Content\MakaleEkleri\44\MakaleResimleri\" />
+    <Folder Include="Content\MakaleEkleri\47\MakaleDosyalari\1ad60834-1ebd-459f-81a3-55151ce1fa2e1.jpg\" />
+    <Folder Include="Content\MakaleEkleri\47\MakaleResimleri\" />
+    <Folder Include="Content\MakaleEkleri\48\MakaleDosyalari\9675ea0a-a549-4a1b-a46f-80e6799a114dt.jpg\" />
+    <Folder Include="Content\MakaleEkleri\48\MakaleResimleri\" />
+    <Folder Include="Content\MakaleEkleri\49\MakaleDosyalari\8d4f2ca2-3942-4d68-a25f-7425cbb587c9t.jpg\" />
+    <Folder Include="Content\MakaleEkleri\49\MakaleResimleri\" />
+    <Folder Include="Content\MakaleEkleri\50\MakaleResimleri\" />
+    <Folder Include="Content\Projeler\10\ProjeDosyalari\" />
+    <Folder Include="Content\Projeler\13\ProjeResimleri\" />
+    <Folder Include="Content\Projeler\4\ProjeDosyalari\" />
+    <Folder Include="Content\Projeler\5\ProjeDosyalari\" />
+    <Folder Include="Content\Projeler\6\ProjeDosyalari\" />
+    <Folder Include="Content\Projeler\7\ProjeDosyalari\" />
+    <Folder Include="Content\Projeler\8\ProjeDosyalari\" />
+    <Folder Include="Content\Projeler\9\ProjeDosyalari\" />
+  </ItemGroup>
+
+
+
+</Project>

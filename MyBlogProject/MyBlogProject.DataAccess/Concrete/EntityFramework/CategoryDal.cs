@@ -1,10 +1,8 @@
-﻿using  MyBlogProject.Core.DataAccess.EntityFramework;
-using  MyBlogProject.DataAccess.Abstract;
-using  MyBlogProject.DataAccess.Concrete;
-using  MyBlogProject.Entites.Models;
-using  MyBlogProject.Entities.Models;
+﻿using MyBlogProject.Core.DataAccess.EntityFramework;
+using MyBlogProject.DataAccess.Abstract;
+using MyBlogProject.Entites.Models;
 
-namespace  MyBlogProject.DataAccess.Concrete.EntityFramework
+namespace MyBlogProject.DataAccess.Concrete.EntityFramework
 {
     public class CategoryDal : EntityRepositoryBase<Category, AdemBlogDbContext>, ICategoryDal
     {

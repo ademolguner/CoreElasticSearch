@@ -1,12 +1,8 @@
-﻿using  MyBlogProject.Entities.Models;
-using  MyBlogProject.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MyBlogProject.Core.Entities;
 
-namespace  MyBlogProject.Entities.ComplexTypes
+namespace MyBlogProject.Entities.ComplexTypes
 {
-   public class PostTagDto : IEntity
+    public class PostTagDto : IEntity
     {
         public string TagValueName { get; set; }
     }

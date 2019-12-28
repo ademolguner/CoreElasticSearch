@@ -1,13 +1,13 @@
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp3.1\MyBlogProject.DataAccess.deps.json
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp3.1\MyBlogProject.DataAccess.dll
-D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\MyBlogProject.DataAccess.csprojAssemblyReference.cache
-D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\MyBlogProject.DataAccess.AssemblyInfoInputs.cache
-D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\MyBlogProject.DataAccess.AssemblyInfo.cs
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp3.1\MyBlogProject.DataAccess.pdb
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp3.1\MyBlogProject.Core.dll
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp3.1\MyBlogProject.Entities.dll
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp3.1\MyBlogProject.Entities.pdb
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp3.1\MyBlogProject.Core.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\MyBlogProject.DataAccess.csprojAssemblyReference.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\MyBlogProject.DataAccess.AssemblyInfoInputs.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\MyBlogProject.DataAccess.AssemblyInfo.cs
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\MyBlogProject.DataAccess.csproj.CopyComplete
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\MyBlogProject.DataAccess.dll
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\MyBlogProject.DataAccess.pdb

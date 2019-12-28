@@ -1,9 +1,7 @@
-﻿using  MyBlogProject.Core.Entities;
+﻿using MyBlogProject.Core.Entities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace  MyBlogProject.Entities.Models
+namespace MyBlogProject.Entities.Models
 {
     public class Comment : IEntity
     {

@@ -1,16 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using  MyBlogProject.Core.Entities;
+using MyBlogProject.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using MyBlogProject.Core.DataAccess;
 
-namespace  MyBlogProject.Core.DataAccess.EntityFramework
+namespace MyBlogProject.Core.DataAccess.EntityFramework
 {
     public class EntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
-         where TEntity : class , IEntity, new()
+         where TEntity : class, IEntity, new()
          where TContext : DbContext, new()
     {
         public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)

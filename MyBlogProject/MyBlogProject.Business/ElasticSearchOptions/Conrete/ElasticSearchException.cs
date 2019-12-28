@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
-namespace  MyBlogProject.Business.ElasticSearchOptions.Conrete
+namespace MyBlogProject.Business.ElasticSearchOptions.Conrete
 {
     /// <summary>
     /// Es abnormal
@@ -16,7 +14,6 @@ namespace  MyBlogProject.Business.ElasticSearchOptions.Conrete
         /// </summary>
         public ElasticSearchException()
         {
-
         }
 
         /// <summary>
@@ -25,7 +22,6 @@ namespace  MyBlogProject.Business.ElasticSearchOptions.Conrete
         public ElasticSearchException(SerializationInfo serializationInfo, StreamingContext context)
             : base(serializationInfo, context)
         {
-
         }
 
         /// <summary>
@@ -35,7 +31,6 @@ namespace  MyBlogProject.Business.ElasticSearchOptions.Conrete
         public ElasticSearchException(string message)
             : base(message)
         {
-
         }
 
         /// <summary>
@@ -46,7 +41,6 @@ namespace  MyBlogProject.Business.ElasticSearchOptions.Conrete
         public ElasticSearchException(string message, Exception innerException)
             : base(message, innerException)
         {
-
         }
     }
 }

@@ -1,23 +1,13 @@
-﻿using  MyBlogProject.Entities.Models;
+﻿using MyBlogProject.Core.Business.EntityRepository;
+using MyBlogProject.Entities.Models;
 using System.Collections.Generic;
 
-namespace  MyBlogProject.Business.Abstract
+namespace MyBlogProject.Business.Abstract
 {
-    public interface ICommentService
+    public interface ICommentService : IEntityCommonRepository<Comment>
     {
-        List<Comment> GetAll();
-
-        Comment GetById(int id);
-
-        Comment Add(Comment comment);
-
-        Comment Update(Comment comment);
-
-        void Delete(Comment comment);
-
         List<Comment> GetCommentsByPostId(int postId);
-        List<Comment> GetCommentsByPostId(int postId, int lastAmount);
 
-        
+        List<Comment> GetCommentsByPostId(int postId, int lastAmount);
     }
 }

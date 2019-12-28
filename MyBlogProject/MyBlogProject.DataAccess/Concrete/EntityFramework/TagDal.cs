@@ -1,12 +1,11 @@
-﻿using  MyBlogProject.Core.DataAccess.EntityFramework;
-using  MyBlogProject.DataAccess.Abstract;
-using  MyBlogProject.DataAccess.Concrete;
-using  MyBlogProject.Entities.Models;
-using  MyBlogProject.Entities.ComplexTypes;
+﻿using MyBlogProject.Core.DataAccess.EntityFramework;
+using MyBlogProject.DataAccess.Abstract;
+using MyBlogProject.Entities.ComplexTypes;
+using MyBlogProject.Entities.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace  MyBlogProject.DataAccess.Concrete.EntityFramework
+namespace MyBlogProject.DataAccess.Concrete.EntityFramework
 {
     public class TagDal : EntityRepositoryBase<Tag, AdemBlogDbContext>, ITagDal
     {
@@ -20,7 +19,7 @@ namespace  MyBlogProject.DataAccess.Concrete.EntityFramework
                                   join t in context.Tag
                                   on pt.TagId equals t.TagId
                                   where p.PostId == postId
-                                  select new PostTagDto { TagValueName = t.TagName};
+                                  select new PostTagDto { TagValueName = t.TagName };
                 return tagNameList.ToList();
             }
         }

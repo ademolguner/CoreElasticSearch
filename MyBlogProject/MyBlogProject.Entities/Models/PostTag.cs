@@ -1,9 +1,6 @@
-﻿using  MyBlogProject.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MyBlogProject.Core.Entities;
 
-namespace  MyBlogProject.Entities.Models
+namespace MyBlogProject.Entities.Models
 {
     public class PostTag : IEntity
     {

@@ -1,7 +1,6 @@
-﻿using  MyBlogProject.Core.Entities;
-using System.Collections.Generic;
+﻿using MyBlogProject.Core.Entities;
 
-namespace  MyBlogProject.Entites.Models
+namespace MyBlogProject.Entites.Models
 {
     public class Category : IEntity
     {

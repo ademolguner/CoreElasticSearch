@@ -1,22 +1,23 @@
-﻿using  MyBlogProject.Entities.Models;
+﻿using MyBlogProject.Core.Business.EntityRepository;
+using MyBlogProject.Entities.Models;
 using System.Collections.Generic;
 
-namespace  MyBlogProject.Business.Abstract
+namespace MyBlogProject.Business.Abstract
 {
-    public interface IPostTagService
+    public interface IPostTagService : IEntityCommonRepository<PostTag>
     {
+        //List<PostTag> GetAll();
 
-        List<PostTag> GetAll();
+        //PostTag GetById(int id);
 
-        PostTag GetById(int id);
+        //PostTag Add(PostTag postTag);
 
-        PostTag Add(PostTag postTag);
+        //PostTag Update(PostTag postTag);
 
-        PostTag Update(PostTag postTag);
-
-        void Delete(PostTag postTag);
+        //void Delete(PostTag postTag);
 
         List<PostTag> GetListByPostId(int postId);
+
         List<PostTag> GetListByTagId(int tagId);
     }
 }

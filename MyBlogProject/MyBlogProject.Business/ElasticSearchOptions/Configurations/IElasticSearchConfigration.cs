@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace  MyBlogProject.Business.ElasticSearchOptions.Configurations
+﻿namespace MyBlogProject.Business.ElasticSearchOptions.Configurations
 {
-   public  interface IElasticSearchConfigration
+    public interface IElasticSearchConfigration
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        string ConnectionString { get; set; }
+        string ConnectionString { get; }
 
         /// <summary>
         ///
         /// </summary>
-        string AuthUserName { get; set; }
+        string AuthUserName { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        string AuthPassWord { get; set; }
+        string AuthPassWord { get; }
     }
 }
