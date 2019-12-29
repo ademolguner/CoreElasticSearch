@@ -7,6 +7,6 @@ namespace MyBlogProject.DataAccess.Abstract
 {
     public interface ITagDal : IEntityRepository<Tag>
     {
-        List<PostTagDto> GetPostTags(int postId);
+        List<PostTagsInfo> GetPostTags(int postId);
     }
 }

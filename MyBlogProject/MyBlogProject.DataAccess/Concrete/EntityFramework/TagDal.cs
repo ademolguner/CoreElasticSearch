@@ -9,7 +9,7 @@ namespace MyBlogProject.DataAccess.Concrete.EntityFramework
 {
     public class TagDal : EntityRepositoryBase<Tag, AdemBlogDbContext>, ITagDal
     {
-        public List<PostTagDto> GetPostTags(int postId)
+        public List<PostTagsInfo> GetPostTags(int postId)
         {
             using (AdemBlogDbContext context = new AdemBlogDbContext())
             {
@@ -19,7 +19,7 @@ namespace MyBlogProject.DataAccess.Concrete.EntityFramework
                                   join t in context.Tag
                                   on pt.TagId equals t.TagId
                                   where p.PostId == postId
-                                  select new PostTagDto { TagValueName = t.TagName };
+                                  select new PostTagsInfo { TagValueName = t.TagName };
                 return tagNameList.ToList();
             }
         }

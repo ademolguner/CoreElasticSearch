@@ -2,7 +2,7 @@
 
 namespace MyBlogProject.Entities.ComplexTypes
 {
-    public class PostTagDto : IEntity
+    public class PostTagsInfo : IEntity
     {
         public string TagValueName { get; set; }
     }

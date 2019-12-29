@@ -42,7 +42,7 @@ namespace MyBlogProject.Business.Concrete.Manager
             return tag;
         }
 
-        public List<PostTagDto> PostTagListForPost(int postID)
+        public List<PostTagsInfo> PostTagListForPost(int postID)
         {
             return _tagDal.GetPostTags(postID);
         }

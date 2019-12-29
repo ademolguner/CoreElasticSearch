@@ -14,31 +14,20 @@ namespace MyBlogProject.Business.Concrete.Manager
     {
         private readonly IPostDal _postDal;
         private readonly IElasticSearchService _elasticSearchService;
-        private readonly ITagDal _tagDal;
+        private readonly ITagService _tagService;
+        private readonly IUserService _userService;
 
-        public PostManager(IPostDal postDal, IElasticSearchService elasticSearchService, ITagDal tagDal)
+        public PostManager(IPostDal postDal, IElasticSearchService elasticSearchService, ITagService tagService, IUserService userService)
         {
             _postDal = postDal;
             _elasticSearchService = elasticSearchService;
-            _tagDal = tagDal;
+            _tagService = tagService;
+            _userService = userService;
         }
 
         public Post Insert(Post post)
         {
             _postDal.Add(post);
-            // elasticsearch işlemi
-            _elasticSearchService.AddOrUpdateAsync<PostElasticIndexDto, Guid>(
-                ElasticSearchItemsConst.PostIndexName,
-                new PostElasticIndexDto
-                {
-                    Id = Guid.NewGuid(),
-                    Title = post.Title,
-                    PostContent = post.Content,
-                    CategoryName = post.Category.CategoryName,
-                    Url = "/post/id/" + post.PostId.ToString(),
-                    TagNameValues = _tagDal.GetPostTags(post.PostId).Select(x => x.TagValueName).ToList()
-                });
-
             return post;
         }
 
@@ -76,6 +65,32 @@ namespace MyBlogProject.Business.Concrete.Manager
         public List<Post> GetPostsByUserId(int userId)
         {
             return _postDal.GetList(c => c.UserId == userId);
+        }
+
+        public bool PostCreateElasticIndex(int postID)
+        {
+            var postInfo = _postDal.Get(c => c.PostId == postID);
+            try
+            {
+                _elasticSearchService.AddOrUpdateAsync<PostElasticIndexDto, Guid>(
+                   ElasticSearchItemsConst.PostIndexName,
+                   new PostElasticIndexDto
+                   {
+                       Id = Guid.NewGuid(),
+                       Title = postInfo.Title,
+                       PostContent = postInfo.Content,
+                       CategoryName = postInfo.Category.CategoryName,
+                       Url = "/post/id/" + postInfo.PostId.ToString(),
+                       TagNameValues = _tagService.PostTagListForPost(postInfo.PostId).Select(x => x.TagValueName).ToList(),
+                       UserInfo = _userService.GetByItem(postInfo.UserId).FullName
+                   });
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
     }
 }

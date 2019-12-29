@@ -16,7 +16,7 @@ namespace MyBlogProject.Business.Abstract
         //Tag UpdateTag(Tag tag);
 
         //void DeleteTag(Tag tag);
-        List<PostTagDto> PostTagListForPost(int postID);
+        List<PostTagsInfo> PostTagListForPost(int postID);
 
         // Burada yazılan metotlar iş kuralları gereğince gelen
         // ihtiyaçlara karşılık verebilmek için değişkenlik

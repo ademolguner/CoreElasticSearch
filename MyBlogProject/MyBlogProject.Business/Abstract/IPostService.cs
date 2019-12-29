@@ -1,4 +1,5 @@
-﻿using MyBlogProject.Core.Business.EntityRepository;
+﻿using MyBlogProject.Business.ObjectDtos.Post;
+using MyBlogProject.Core.Business.EntityRepository;
 using MyBlogProject.Entities.Models;
 using System.Collections.Generic;
 
@@ -9,5 +10,7 @@ namespace MyBlogProject.Business.Abstract
         List<Post> GetPostsByCategoryId(int categoryId);
         List<Post> GetPostsByUserId(int userId);
         List<Post> GetPostsByCategoryId(int categoryId, int lastAmount);
+        //
+        bool PostCreateElasticIndex(int postId);
     }
 }

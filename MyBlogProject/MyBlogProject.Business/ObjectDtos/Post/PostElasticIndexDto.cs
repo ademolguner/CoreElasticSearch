@@ -18,5 +18,6 @@ namespace MyBlogProject.Business.ObjectDtos.Post
         public string CategoryName { get; set; }
         public ICollection<string> TagNameValues { get; set; }
         public string Url { get; set; }
+        public string UserInfo { get; set; }
     }
 }
