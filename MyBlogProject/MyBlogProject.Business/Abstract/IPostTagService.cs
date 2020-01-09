@@ -18,6 +18,8 @@ namespace MyBlogProject.Business.Abstract
 
         List<PostTag> GetListByPostId(int postId);
 
+        void RemoveAllPostTagsByPostId(int postId);
+
         List<PostTag> GetListByTagId(int tagId);
     }
 }

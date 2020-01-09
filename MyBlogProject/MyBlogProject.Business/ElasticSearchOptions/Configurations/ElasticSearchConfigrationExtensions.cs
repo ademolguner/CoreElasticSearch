@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using MyBlogProject.Business.ElasticSearchOptions.Abstract;
 
 namespace MyBlogProject.Business.ElasticSearchOptions.Configurations
 {
@@ -9,4 +10,5 @@ namespace MyBlogProject.Business.ElasticSearchOptions.Configurations
             return configuration.Get<IElasticSearchConfigration>();
         }
     }
+     
 }

@@ -1,0 +1,15 @@
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\bin\Debug\netcoreapp2.1\MyBlogProject.Business.deps.json
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\bin\Debug\netcoreapp2.1\MyBlogProject.Business.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\bin\Debug\netcoreapp2.1\MyBlogProject.Business.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\bin\Debug\netcoreapp2.1\MyBlogProject.Core.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\bin\Debug\netcoreapp2.1\MyBlogProject.DataAccess.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\bin\Debug\netcoreapp2.1\MyBlogProject.Entities.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\bin\Debug\netcoreapp2.1\MyBlogProject.DataAccess.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\bin\Debug\netcoreapp2.1\MyBlogProject.Core.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\bin\Debug\netcoreapp2.1\MyBlogProject.Entities.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\obj\Debug\netcoreapp2.1\MyBlogProject.Business.csprojAssemblyReference.cache
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\obj\Debug\netcoreapp2.1\MyBlogProject.Business.AssemblyInfoInputs.cache
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\obj\Debug\netcoreapp2.1\MyBlogProject.Business.AssemblyInfo.cs
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\obj\Debug\netcoreapp2.1\MyBlogProject.Business.csproj.CopyComplete
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\obj\Debug\netcoreapp2.1\MyBlogProject.Business.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Business\obj\Debug\netcoreapp2.1\MyBlogProject.Business.pdb

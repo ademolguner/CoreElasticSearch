@@ -7,6 +7,8 @@ using MyBlogProject.Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Transactions;
 
 namespace MyBlogProject.Business.Concrete.Manager
 {
@@ -67,30 +69,37 @@ namespace MyBlogProject.Business.Concrete.Manager
             return _postDal.GetList(c => c.UserId == userId);
         }
 
-        public bool PostCreateElasticIndex(int postID)
+        public async Task<bool> PostAddOrUpdateElasticIndex(PostElasticIndexDto postElasticIndexDto)
         {
-            var postInfo = _postDal.Get(c => c.PostId == postID);
             try
             {
-                _elasticSearchService.AddOrUpdateAsync<PostElasticIndexDto, Guid>(
-                   ElasticSearchItemsConst.PostIndexName,
-                   new PostElasticIndexDto
-                   {
-                       Id = Guid.NewGuid(),
-                       Title = postInfo.Title,
-                       PostContent = postInfo.Content,
-                       CategoryName = postInfo.Category.CategoryName,
-                       Url = "/post/id/" + postInfo.PostId.ToString(),
-                       TagNameValues = _tagService.PostTagListForPost(postInfo.PostId).Select(x => x.TagValueName).ToList(),
-                       UserInfo = _userService.GetByItem(postInfo.UserId).FullName
-                   });
+                await _elasticSearchService.CreateIndexAsync<PostElasticIndexDto, int>(ElasticSearchItemsConst.PostIndexName);
+                await _elasticSearchService.AddOrUpdateAsync<PostElasticIndexDto, int>(
+                    ElasticSearchItemsConst.PostIndexName,
+                    postElasticIndexDto);
                 return true;
             }
             catch (Exception)
             {
                 return false;
-            }
+            } 
+        }
 
+        public async  Task<bool> PostDeleteDocumentElasticIndex(PostElasticIndexDto postElasticIndexDto)
+        {
+            try
+            {
+                await _elasticSearchService.DeleteAsync<PostElasticIndexDto, int>(
+                    ElasticSearchItemsConst.PostIndexName,
+                    "postelasticindexdto",
+                    postElasticIndexDto
+                    );
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

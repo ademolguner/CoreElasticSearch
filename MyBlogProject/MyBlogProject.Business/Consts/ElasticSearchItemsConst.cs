@@ -2,8 +2,8 @@
 {
     public static class ElasticSearchItemsConst
     {
-        public static string ExceptionIndexName = "BlogExceptionElastic";
-        public static string LogIndexName = "BlogLogElastic";
-        public static string PostIndexName = "BlogPostElastic";
+        public static string ExceptionIndexName = "blog_exception_elastic";
+        public static string LogIndexName = "blog_log_elastic";
+        public static string PostIndexName = "blog_post_elastic";
     }
 }

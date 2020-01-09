@@ -1,0 +1,8 @@
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\bin\Debug\netcoreapp2.1\MyBlogProject.Core.deps.json
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\bin\Debug\netcoreapp2.1\MyBlogProject.Core.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\bin\Debug\netcoreapp2.1\MyBlogProject.Core.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.AssemblyInfoInputs.cache
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.AssemblyInfo.cs
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.csprojAssemblyReference.cache

@@ -1,10 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ElasticSearchOptions\Configurations\**" />
+    <EmbeddedResource Remove="ElasticSearchOptions\Configurations\**" />
+    <None Remove="ElasticSearchOptions\Configurations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Elasticsearch.Net" Version="6.8.3" />
     <PackageReference Include="NEST" Version="6.8.3" />
     <PackageReference Include="NEST.JsonNetSerializer" Version="6.8.3" />

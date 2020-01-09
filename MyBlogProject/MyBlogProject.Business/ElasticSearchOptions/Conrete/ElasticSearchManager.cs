@@ -1,4 +1,4 @@
-﻿using MyBlogProject.Business.ElasticSearchOptions.Configurations;
+﻿using MyBlogProject.Business.ElasticSearchOptions.Abstract;
 using MyBlogProject.Business.ElasticSearchOptions.Conrete;
 using Nest;
 using System;
@@ -11,15 +11,12 @@ namespace MyBlogProject.Business.ElasticSearchOptions
     public class ElasticSearchManager : IElasticSearchService
     {
         public IElasticClient EsClient { get; set; }
-
+        private readonly IElasticSearchConfigration _elasticSearchConfigration;
         public ElasticSearchManager(IElasticSearchConfigration elasticSearchConfigration)
         {
             _elasticSearchConfigration = elasticSearchConfigration;
             EsClient = GetClient();
         }
-
-        private readonly IElasticSearchConfigration _elasticSearchConfigration;
-
         private ElasticClient GetClient()
         {
             var str = _elasticSearchConfigration.ConnectionString;
@@ -36,7 +33,6 @@ namespace MyBlogProject.Business.ElasticSearchOptions
 
             return new ElasticClient(connectionString);
         }
-
         public virtual async Task CrateIndexAsync(string indexName)
         {
             var exis = await EsClient.IndexExistsAsync(indexName);
@@ -56,7 +52,6 @@ namespace MyBlogProject.Business.ElasticSearchOptions
             }
             throw new ElasticSearchException($"Create Index {indexName} failed :" + result.ServerError.Error.Reason);
         }
-
         public virtual async Task CreateIndexSuggestAsync<T, TKey>(string indexName) where T : ElasticEntity<TKey>
         {
             var exis = await EsClient.IndexExistsAsync(indexName);
@@ -85,7 +80,6 @@ namespace MyBlogProject.Business.ElasticSearchOptions
             }
             throw new ElasticSearchException($"Create Index {indexName} failed : :" + result.ServerError.Error.Reason);
         }
-
         public virtual async Task CreateIndexCustomSuggestAsync<T, TKey>(string indexName) where T : ElasticEntity<TKey>
         {
             var exis = await EsClient.IndexExistsAsync(indexName);
@@ -101,7 +95,8 @@ namespace MyBlogProject.Business.ElasticSearchOptions
                                  .AutoMap()
                                  .Properties(ps => ps
                                      .Completion(c => c
-                                        .Contexts(ctx => ctx.Category(csg => csg.Name("userId").Path("u"))).Name(d => d.Suggest)
+                                        .Contexts(ctx => ctx.Category(csg => csg.Name("userId").Path("u")))
+                                          .Name(d => d.Suggest)
                                         ))));
 
             var result = await EsClient
@@ -114,15 +109,6 @@ namespace MyBlogProject.Business.ElasticSearchOptions
             }
             throw new ElasticSearchException($"Create Index {indexName} failed : :" + result.ServerError.Error.Reason);
         }
-
-        /// <summary>
-        /// CreateEsIndex auto Mapping T Property
-        /// Auto Set Alias alias is Input IndexName
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <returns></returns>
         public virtual async Task CreateIndexAsync<T, TKey>(string indexName) where T : ElasticEntity<TKey>
         {
             var exis = await EsClient.IndexExistsAsync(indexName);
@@ -143,7 +129,6 @@ namespace MyBlogProject.Business.ElasticSearchOptions
                          .Filters("lowercase", "my_ascii_folding")
                          .Tokenizer("standard")
                          )))
-
                         )
                             .Mappings(m => m.Map<T>(mm => mm.AutoMap()
                             .Properties(p => p
@@ -157,15 +142,6 @@ namespace MyBlogProject.Business.ElasticSearchOptions
             }
             throw new ElasticSearchException($"Create Index {indexName} failed : :" + result.ServerError.Error.Reason);
         }
-
-        /// <summary>
-        /// AddOrUpdate Document
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <param name="model"></param>
-        /// <returns></returns>
         public virtual async Task AddOrUpdateAsync<T, TKey>(string indexName, T model) where T : ElasticEntity<TKey>
         {
             var exis = EsClient.DocumentExists(DocumentPath<T>.Id(new Id(model)), dd => dd.Index(indexName));
@@ -185,16 +161,6 @@ namespace MyBlogProject.Business.ElasticSearchOptions
                 throw new ElasticSearchException($"Insert Docuemnt failed at index {indexName} :" + result.ServerError.Error.Reason);
             }
         }
-
-        /// <summary>
-        /// Bulk AddOrUpdate Docuemnt,Default bulkNum is 1000
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <param name="list"></param>
-        /// <param name="bulkNum">bulkNum</param>
-        /// <returns></returns>
         public virtual async Task BulkAddorUpdateAsync<T, TKey>(string indexName, List<T> list, int bulkNum = 1000) where T : ElasticEntity<TKey>
         {
             if (list.Count <= bulkNum)
@@ -211,15 +177,6 @@ namespace MyBlogProject.Business.ElasticSearchOptions
                 await Task.WhenAll(tasks.ToArray());
             }
         }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <param name="list"></param>
-        /// <returns></returns>
         private async Task BulkAddOrUpdate<T, TKey>(string indexName, List<T> list) where T : ElasticEntity<TKey>
         {
             var bulk = new BulkRequest(indexName)
@@ -234,15 +191,6 @@ namespace MyBlogProject.Business.ElasticSearchOptions
             if (response.Errors)
                 throw new ElasticSearchException($"Bulk InsertOrUpdate Docuemnt failed at index {indexName} :{response.ServerError.Error.Reason}");
         }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <param name="list"></param>
-        /// <returns></returns>
         private async Task BulkDelete<T, TKey>(string indexName, List<T> list) where T : ElasticEntity<TKey>
         {
             var bulk = new BulkRequest(indexName)
@@ -257,16 +205,6 @@ namespace MyBlogProject.Business.ElasticSearchOptions
             if (response.Errors)
                 throw new ElasticSearchException($"Bulk Delete Docuemnt at index {indexName} :{response.ServerError.Error.Reason}");
         }
-
-        /// <summary>
-        ///  Bulk Delete Docuemnt,Default bulkNum is 1000
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <param name="list"></param>
-        /// <param name="bulkNum">bulkNum</param>
-        /// <returns></returns>
         public virtual async Task BulkDeleteAsync<T, TKey>(string indexName, List<T> list, int bulkNum = 100) where T : ElasticEntity<TKey>
         {
             if (list.Count <= bulkNum)
@@ -283,48 +221,23 @@ namespace MyBlogProject.Business.ElasticSearchOptions
                 await Task.WhenAll(tasks);
             }
         }
-
-        /// <summary>
-        /// Delete Docuemnt
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <param name="typeName"></param>
-        /// <param name="model"></param>
-        /// <returns></returns>
         public virtual async Task DeleteAsync<T, TKey>(string indexName, string typeName, T model) where T : ElasticEntity<TKey>
         {
             var response = await EsClient.DeleteAsync(new DeleteRequest(indexName, typeName, new Id(model)));
             if (response.ServerError == null) return;
             throw new ElasticSearchException($"Delete Docuemnt at index {indexName} :{response.ServerError.Error.Reason}");
         }
-
-        /// <summary>
-        /// Delete Index
-        /// </summary>
-        /// <param name="indexName"></param>
-        /// <returns></returns>
         public virtual async Task DeleteIndexAsync(string indexName)
         {
             var response = await EsClient.DeleteIndexAsync(indexName);
             if (response.Acknowledged) return;
             throw new ElasticSearchException($"Delete index {indexName} failed :{response.ServerError.Error.Reason}");
         }
-
         public virtual async Task ReIndex<T, TKey>(string indexName) where T : ElasticEntity<TKey>
         {
             await DeleteIndexAsync(indexName);
             await CreateIndexAsync<T, TKey>(indexName);
         }
-
-        /// <summary>
-        /// Non-stop Update Doucments
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <returns></returns>
         public virtual async Task ReBuild<T, TKey>(string indexName) where T : ElasticEntity<TKey>
         {
             var result = await EsClient.GetAliasAsync(q => q.Index(indexName));
@@ -363,37 +276,12 @@ namespace MyBlogProject.Business.ElasticSearchOptions
             var delResult = await EsClient.DeleteIndexAsync(oldName);
             throw new ElasticSearchException($"reBuild delete old Index {oldName.Name} failed :" + delResult.ServerError.Error.Reason);
         }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <param name="query"></param>
-        /// <returns></returns>
         public virtual async Task<ISearchResponse<T>> SimpleSearchAsync<T, TKey>(string indexName, SearchDescriptor<T> query) where T : ElasticEntity<TKey>
         {
             query.Index(indexName);
             var response = await EsClient.SearchAsync<T>(query);
             return response;
         }
-
-        /// <summary>
-        /// search
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TKey"></typeparam>
-        /// <param name="indexName"></param>
-        /// <param name="query"></param>
-        /// <param name="skip">skip num</param>
-        /// <param name="size">return document size</param>
-        /// <param name="includeFields">return fields</param>
-        /// <param name="preTags">Highlight tags</param>
-        /// <param name="postTags">Highlight tags</param>
-        /// <param name="disableHigh"></param>
-        /// <param name="highField">Highlight fields</param>
-        /// <returns></returns>
         public virtual async Task<ISearchResponse<T>> SearchAsync<T, TKey>(string indexName, SearchDescriptor<T> query, int skip, int size, string[] includeFields = null,
             string preTags = "<strong style=\"color: red;\">", string postTags = "</strong>", bool disableHigh = false, params string[] highField) where T : ElasticEntity<TKey>
         {

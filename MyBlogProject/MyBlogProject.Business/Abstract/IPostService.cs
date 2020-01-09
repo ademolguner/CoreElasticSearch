@@ -2,6 +2,7 @@
 using MyBlogProject.Core.Business.EntityRepository;
 using MyBlogProject.Entities.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MyBlogProject.Business.Abstract
 {
@@ -11,6 +12,7 @@ namespace MyBlogProject.Business.Abstract
         List<Post> GetPostsByUserId(int userId);
         List<Post> GetPostsByCategoryId(int categoryId, int lastAmount);
         //
-        bool PostCreateElasticIndex(int postId);
+        Task<bool> PostAddOrUpdateElasticIndex(PostElasticIndexDto postElasticIndexDto);
+        Task<bool> PostDeleteDocumentElasticIndex(PostElasticIndexDto postElasticIndexDto);
     }
 }

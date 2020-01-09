@@ -9,3 +9,14 @@ D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProjec
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp3.1\MyBlogProject.Entities.csproj.CopyComplete
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp3.1\MyBlogProject.Entities.dll
 D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp3.1\MyBlogProject.Entities.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\bin\Debug\netcoreapp3.1\MyBlogProject.Entities.deps.json
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\bin\Debug\netcoreapp3.1\MyBlogProject.Entities.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\bin\Debug\netcoreapp3.1\MyBlogProject.Entities.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\bin\Debug\netcoreapp3.1\MyBlogProject.Core.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\bin\Debug\netcoreapp3.1\MyBlogProject.Core.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp3.1\MyBlogProject.Entities.csprojAssemblyReference.cache
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp3.1\MyBlogProject.Entities.AssemblyInfoInputs.cache
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp3.1\MyBlogProject.Entities.AssemblyInfo.cs
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp3.1\MyBlogProject.Entities.csproj.CopyComplete
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp3.1\MyBlogProject.Entities.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp3.1\MyBlogProject.Entities.pdb

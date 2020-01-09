@@ -50,5 +50,14 @@ namespace MyBlogProject.Business.Concrete.Manager
             _postTagDal.Update(postTag);
             return postTag;
         }
+
+        public void RemoveAllPostTagsByPostId(int postId)
+        {
+            var data = GetListByPostId(postId);
+            foreach (var item in data)
+            {
+                Remove(item);
+            }
+        }
     }
 }

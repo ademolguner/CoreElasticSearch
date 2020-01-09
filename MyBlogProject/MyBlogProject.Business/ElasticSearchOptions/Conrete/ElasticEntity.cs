@@ -8,10 +8,5 @@ namespace MyBlogProject.Business.ElasticSearchOptions.Conrete
         public TEntityKey Id { get; set; }
         public CompletionField Suggest { get; set; }
         public string SearchableText { get; set; }
-    }
-
-    //public class ElasticEntity
-    //{
-    //    public CompletionField Suggest { get; set; }
-    //}
+    } 
 }

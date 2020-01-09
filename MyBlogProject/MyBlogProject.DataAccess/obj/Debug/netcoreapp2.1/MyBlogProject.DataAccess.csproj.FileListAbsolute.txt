@@ -1,0 +1,13 @@
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp2.1\MyBlogProject.DataAccess.deps.json
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp2.1\MyBlogProject.DataAccess.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp2.1\MyBlogProject.DataAccess.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp2.1\MyBlogProject.Core.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp2.1\MyBlogProject.Entities.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp2.1\MyBlogProject.Entities.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\bin\Debug\netcoreapp2.1\MyBlogProject.Core.pdb
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp2.1\MyBlogProject.DataAccess.csprojAssemblyReference.cache
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp2.1\MyBlogProject.DataAccess.AssemblyInfoInputs.cache
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp2.1\MyBlogProject.DataAccess.AssemblyInfo.cs
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp2.1\MyBlogProject.DataAccess.csproj.CopyComplete
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp2.1\MyBlogProject.DataAccess.dll
+C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.DataAccess\obj\Debug\netcoreapp2.1\MyBlogProject.DataAccess.pdb
