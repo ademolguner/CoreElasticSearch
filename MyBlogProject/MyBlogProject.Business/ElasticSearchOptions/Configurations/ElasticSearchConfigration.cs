@@ -1,9 +1,17 @@
-﻿namespace MyBlogProject.Business.ElasticSearchOptions.Configurations
+using Microsoft.Extensions.Configuration;
+using MyBlogProject.Business.ElasticSearchOptions.Abstract;
+
+namespace MyBlogProject.Business.ElasticSearchOptions.Conrete
 {
     public class ElasticSearchConfigration : IElasticSearchConfigration
     {
-        public string ConnectionString { get { return "http://localhost:9200/"; } }
-        public string AuthUserName { get { return "guest"; } }
-        public string AuthPassWord { get { return "guest"; } }
+        public IConfiguration Configuration { get; }
+        public ElasticSearchConfigration(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+        public string ConnectionString { get { return Configuration.GetSection("ElasticSearchOptions:ConnectionString:HostUrls").ToString(); } }
+        public string AuthUserName { get { return Configuration.GetSection("ElasticSearchOptions:ConnectionString:UserName").ToString(); } }
+        public string AuthPassWord { get { return Configuration.GetSection("ElasticSearchOptions:ConnectionString:Password").ToString(); } }
     }
 }
