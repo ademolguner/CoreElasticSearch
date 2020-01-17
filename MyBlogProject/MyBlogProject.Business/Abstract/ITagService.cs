@@ -18,6 +18,8 @@ namespace MyBlogProject.Business.Abstract
         //void DeleteTag(Tag tag);
         List<PostTagsInfo> PostTagListForPost(int postID);
 
+        List<Tag> TagListForIds(List<int> tagIds);
+
         // Burada yazılan metotlar iş kuralları gereğince gelen
         // ihtiyaçlara karşılık verebilmek için değişkenlik
         // gösterecektir.

@@ -18,8 +18,10 @@ namespace MyBlogProject.Entities.Models
         public int CategoryId { get; set; }
         public int UserId { get; set; }
         public int ReadCount { get; set; }
+
         public Category Category { get; set; }
         public List<Comment> Comments { get; set; }
         public User User { get; set; }
+        public List<Tag> PostTags { get; set; }
     }
 }

@@ -5,8 +5,9 @@ namespace MyBlogProject.Business.ElasticSearchOptions.Conrete
 {
     public class ElasticEntity<TEntityKey> : IElasticEntity<TEntityKey>
     {
-        public TEntityKey Id { get; set; }
-        public CompletionField Suggest { get; set; }
-        public string SearchableText { get; set; }
+        public virtual TEntityKey Id { get; set; }
+        public virtual CompletionField Suggest { get; set; }
+        public virtual string SearchableText { get; set; }
+        public virtual double Score { get; set; }
     } 
 }

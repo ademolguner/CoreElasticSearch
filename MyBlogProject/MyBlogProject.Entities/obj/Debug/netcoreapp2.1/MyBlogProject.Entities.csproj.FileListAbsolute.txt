@@ -9,3 +9,14 @@ C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProjec
 C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp2.1\MyBlogProject.Entities.csproj.CopyComplete
 C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp2.1\MyBlogProject.Entities.dll
 C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp2.1\MyBlogProject.Entities.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\bin\Debug\netcoreapp2.1\MyBlogProject.Entities.deps.json
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\bin\Debug\netcoreapp2.1\MyBlogProject.Entities.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\bin\Debug\netcoreapp2.1\MyBlogProject.Entities.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\bin\Debug\netcoreapp2.1\MyBlogProject.Core.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\bin\Debug\netcoreapp2.1\MyBlogProject.Core.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp2.1\MyBlogProject.Entities.csprojAssemblyReference.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp2.1\MyBlogProject.Entities.AssemblyInfoInputs.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp2.1\MyBlogProject.Entities.AssemblyInfo.cs
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp2.1\MyBlogProject.Entities.csproj.CopyComplete
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp2.1\MyBlogProject.Entities.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Entities\obj\Debug\netcoreapp2.1\MyBlogProject.Entities.pdb

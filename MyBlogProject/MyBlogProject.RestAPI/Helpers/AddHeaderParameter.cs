@@ -16,17 +16,19 @@ namespace MyBlogProject.RestAPI.Helpers
 
             operation.Parameters.Add(new NonBodyParameter
             {
-                Name = "isMobile",
+                Name = "Skip",
                 In = "header",
-                Type = "bool",
+                Type = "int",
                 Required = false,
+                Default=0
             });
             operation.Parameters.Add(new NonBodyParameter
             {
-                Name = "senderName",
+                Name = "ItemCount",
                 In = "header",
-                Type = "string",
+                Type = "int",
                 Required = false,
+                Default=100
             });
         }
     }

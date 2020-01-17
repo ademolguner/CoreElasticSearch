@@ -6,3 +6,11 @@ C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProjec
 C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.dll
 C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.pdb
 C:\Users\GXT90063985\Desktop\CoreElasticSearch-master\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.csprojAssemblyReference.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Core\bin\Debug\netcoreapp2.1\MyBlogProject.Core.deps.json
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Core\bin\Debug\netcoreapp2.1\MyBlogProject.Core.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Core\bin\Debug\netcoreapp2.1\MyBlogProject.Core.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.AssemblyInfoInputs.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.AssemblyInfo.cs
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\CoreElasticSearch\CoreElasticSearch\MyBlogProject\MyBlogProject.Core\obj\Debug\netcoreapp2.1\MyBlogProject.Core.csprojAssemblyReference.cache

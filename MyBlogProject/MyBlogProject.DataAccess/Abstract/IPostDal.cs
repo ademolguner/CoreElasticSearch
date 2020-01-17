@@ -6,6 +6,6 @@ namespace MyBlogProject.DataAccess.Abstract
 {
     public interface IPostDal : IEntityRepository<Post>
     {
-        PostDetailInfo GetPostDetail(int postId);
+        PostDetailInfo PostDetail(int postId);
     }
 }

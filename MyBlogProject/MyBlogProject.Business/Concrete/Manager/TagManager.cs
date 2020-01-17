@@ -46,5 +46,15 @@ namespace MyBlogProject.Business.Concrete.Manager
         {
             return _tagDal.GetPostTags(postID);
         }
+
+        public List<Tag> TagListForIds(List<int> tagIds)
+        {
+            var retunrList = new List<Tag>();
+            foreach (var item in tagIds)
+            {
+                retunrList.Add(GetByItem(item));
+            }
+            return  retunrList;
+        }
     }
 }

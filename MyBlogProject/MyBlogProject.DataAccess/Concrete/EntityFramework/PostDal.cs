@@ -8,7 +8,7 @@ namespace MyBlogProject.DataAccess.Concrete.EntityFramework
 {
     public class PostDal : EntityRepositoryBase<Post, AdemBlogDbContext>, IPostDal
     {
-        public PostDetailInfo GetPostDetail(int postId)
+        public PostDetailInfo PostDetail(int postId)
         {
             using (var dbContext= new AdemBlogDbContext())
             {

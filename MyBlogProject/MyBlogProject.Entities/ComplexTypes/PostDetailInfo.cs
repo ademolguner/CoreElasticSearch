@@ -11,6 +11,7 @@ namespace MyBlogProject.Entities.ComplexTypes
         public Post PostInfo { get; set; }
         public string UserName { get; set; }
         public string CategoryName { get; set; }
+        public List<int> TagIds { get; set; }
 
     }
 }

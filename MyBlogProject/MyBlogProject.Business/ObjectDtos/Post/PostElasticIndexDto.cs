@@ -9,15 +9,18 @@ namespace MyBlogProject.Business.ObjectDtos.Post
     {
         public PostElasticIndexDto()
         {
-            TagNameValues = new List<string>();// new HashSet<string>();
+            TagNameValues = new List<string>();
+            TagNameIds = new List<int>();
         }
-
-        //public Guid ObjectId { get; set; }
-        public string Title { get; set; }
-        public string PostContent { get; set; }
-        public string CategoryName { get; set; }
-        public List<string> TagNameValues { get; set; }
-        public string Url { get; set; }
-        public string UserInfo { get; set; }
+         
+        public virtual string Title { get; set; }
+        public virtual string CategoryName { get; set; }
+        public virtual int CategoryId { get; set; }
+        public virtual List<string> TagNameValues { get; set; }
+        public virtual List<int> TagNameIds { get; set; }
+        public virtual string Url { get; set; }
+        public virtual string UserInfo { get; set; }
+        public virtual int UserId { get; set; }
+        public virtual DateTime CreatedDate { get; set; }
     }
 }
