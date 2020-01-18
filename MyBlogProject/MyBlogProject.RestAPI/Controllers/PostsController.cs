@@ -239,7 +239,7 @@ namespace MyBlogProject.RestAPI.Controllers
                 TagNameValues = tagNameValues,
                 TagNameIds = postTagIds,
                 Suggest = new Nest.CompletionField { Input = suggestList.Distinct() },
-                SearchableText = postInfo.Content,
+                SearchingArea = postInfo.Content,
                 Url = "api/posts/" + postInfo.PostId.ToString(),
                 Id = postInfo.PostId,
                 CreatedDate = DateTime.Now,

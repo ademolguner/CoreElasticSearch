@@ -63,7 +63,7 @@ namespace MyBlogProject.Business.ElasticSearchOptions.Conrete
                         )
                             .Mappings(m => m.Map<T>(mm => mm.AutoMap()
                             .Properties(p => p
-                 .Text(t => t.Name(n => n.SearchableText)
+                 .Text(t => t.Name(n => n.SearchingArea)
                 .Analyzer("turkish_analyzer")
             )))));
             if (result.Acknowledged)
@@ -364,7 +364,7 @@ namespace MyBlogProject.Business.ElasticSearchOptions.Conrete
                                                         mm.AutoMap()
                                                             .Properties(p => 
                                                                              p.Text(t => 
-                                                                                         t.Name(n => n.SearchableText)
+                                                                                         t.Name(n => n.SearchingArea)
                                                                                    )
                                                                         )
                                                    )

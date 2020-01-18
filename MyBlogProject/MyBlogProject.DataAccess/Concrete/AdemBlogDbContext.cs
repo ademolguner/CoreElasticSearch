@@ -17,7 +17,8 @@ namespace MyBlogProject.DataAccess.Concrete
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AdemBlogDb;Integrated Security=True;");
+            //optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AdemBlogDb;Integrated Security=True;");
+            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=AdemBlogDb;Integrated Security=True;");
         }
 
         public DbSet<Post> Post { get; set; }

@@ -7,7 +7,7 @@ namespace MyBlogProject.Business.ElasticSearchOptions.Conrete
     {
         public virtual TEntityKey Id { get; set; }
         public virtual CompletionField Suggest { get; set; }
-        public virtual string SearchableText { get; set; }
-        public virtual double Score { get; set; }
+        public virtual string SearchingArea { get; set; }
+        public virtual double? Score { get; set; }
     } 
 }

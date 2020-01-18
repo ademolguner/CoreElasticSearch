@@ -171,9 +171,9 @@ namespace MyBlogProject.Business.Concrete.Manager
                                                          .Field(ff => ff.UserId).Terms<int>(currentUserId)
                                                          .Field(ff => ff.CategoryId).Terms<int>(selectedCategoryId))
                                      // aranan kelime veya cümle geçmesi yeterlidir, bire bir eşleme istemez
-                                     && q.MatchPhrasePrefix(m => m.Field(f => f.SearchableText).Query(searchText))
+                                     && q.MatchPhrasePrefix(m => m.Field(f => f.SearchingArea).Query(searchText))
                                    // aranan kelime veya cümlenin bire bir eşleşmesi gerekmektedir.
-                                   //|| q.MatchPhrase(m=> m.Field(f=> f.SearchableText).Query(searchText))
+                                   //|| q.MatchPhrase(m=> m.Field(f=> f.SearchingArea).Query(searchText))
                                    );*/
 
                 //Termler: Sadece boolen yani “Yes / No” veya string bir kelime ile eşleşebilecek durumlarda kullanılır.
@@ -187,11 +187,11 @@ namespace MyBlogProject.Business.Concrete.Manager
                                                 );
                 // aranan kelime veya cümle geçmesi yeterlidir, bire bir eşleme istemez
                 searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>()
-                            .Query(q => q.MatchPhrasePrefix(m => m.Field(f => f.SearchableText).Query(searchText)));
+                            .Query(q => q.MatchPhrasePrefix(m => m.Field(f => f.SearchingArea).Query(searchText)));
 
                 // aranan kelime veya cümlenin bire bir eşleşmesi gerekmektedir.
                 searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>()
-                            .Query(q => q.MatchPhrase(m => m.Field(f => f.SearchableText).Query(searchText)));
+                            .Query(q => q.MatchPhrase(m => m.Field(f => f.SearchingArea).Query(searchText)));
 
 
                 // komplex sorgular seklinde birleştirip yazabiliriz.
@@ -199,7 +199,7 @@ namespace MyBlogProject.Business.Concrete.Manager
                             .Query(q => q.Terms(t => t.Field(ff => ff.UserId).Terms<int>(currentUserId)
                                                       .Field(ff => ff.CategoryId).Terms<int>(selectedCategoryId)
                                                 )
-                                     && q.MatchPhrasePrefix(m => m.Field(f => f.SearchableText).Query(searchText))
+                                     && q.MatchPhrasePrefix(m => m.Field(f => f.SearchingArea).Query(searchText))
                                    );
 
 
@@ -207,7 +207,7 @@ namespace MyBlogProject.Business.Concrete.Manager
                 //https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html
                 searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>()
                          .Query(q => q
-                            .MultiMatch(m => m.Fields(f => f.Field(ff => ff.SearchableText, 2.0)
+                            .MultiMatch(m => m.Fields(f => f.Field(ff => ff.SearchingArea, 2.0)
                                                             .Field(ff => ff.Title, 1.0)
                                                      )
                                               .Query(searchText)
@@ -218,33 +218,35 @@ namespace MyBlogProject.Business.Concrete.Manager
 
 
                 // 2.0 ve 1.0 ı vermeden yaz ve vererek yaz ama acıkla
+
                 searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>()
                          .Query(q => q
-                                      .MultiMatch(m => m.Fields(f => f.Field(ff => ff.SearchableText, 2.0)
+                                      .MultiMatch(m => m.Fields(f => f.Field(ff => ff.SearchingArea, 2.0)
                                                                       .Field(ff => ff.Title, 1.0)
                                                                )
                                                         .Query(searchText)
                                                         .Type(TextQueryType.BestFields)
-                                                        .Operator(Operator.Or)  // Operator.And  dene 
+                                                        .Operator(Operator.Or) 
+                                                        .MinimumShouldMatch(3)
                                                   )
                               )
-                         .Sort(s => s.Descending(f => f.CreatedDate.Date));
+                         .Sort(s => s.Descending(f => f.CreatedDate));
 
 
 
-                searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>()
-                          .Query(q =>
-                                       q.MultiMatch(m => m.Fields(f => f.Field(ff => ff.SearchableText, 2.0)
-                                                                       .Field(ff => ff.Title, 1.0)
-                                                                )
-                                                         .Query(searchText)
-                                                         .Type(TextQueryType.BestFields)
-                                                         .Operator(Operator.Or)  // Operator.And  dene 
-                                                   )
-                                    && q.Range(r => r.Field(rf => rf.TagNameValues.Count).GreaterThan(2))
-                                    || q.Range(r => r.Field(rf => rf.TagNameValues.Count).GreaterThanOrEquals(3))
-                               )
-                          .Sort(s => s.Descending(f => f.CreatedDate.Date));
+                //searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>()
+                //          .Query(q =>
+                //                       q.MultiMatch(m => m.Fields(f => f.Field(ff => ff.SearchingArea, 2.0)
+                //                                                       .Field(ff => ff.Title, 1.0)
+                //                                                )
+                //                                         .Query(searchText)
+                //                                         .Type(TextQueryType.BestFields)
+                //                                         .Operator(Operator.Or)  // Operator.And  dene 
+                //                                   )
+                //                    && q.Range(r => r.Field(rf => rf.TagNameValues.Count).GreaterThan(2))
+                //                    || q.Range(r => r.Field(rf => rf.TagNameValues.Count).GreaterThanOrEquals(3))
+                //               )
+                //          .Sort(s => s.Descending(f => f.CreatedDate.Date));
 
                 /*
                  *  https://www.elastic.co/guide/en/elasticsearch/painless/7.5/painless-operators-boolean.html
@@ -263,24 +265,24 @@ namespace MyBlogProject.Business.Concrete.Manager
                  */
 
                 /*
-                 f.Field(ff => ff.SearchableText, 2.0)  buradaki 2.0 işlemi boost işlemidir.
+                 f.Field(ff => ff.SearchingArea, 2.0)  buradaki 2.0 işlemi boost işlemidir.
                  öncelik  ve katsayı işlemidir   ÖNCELİKLENDİRME İŞLEMİDİR.
                  */
-                searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>()
-                          .Query(q =>
-                                       q.MultiMatch(m => m.Fields(f => f.Field(ff => ff.SearchableText, 2.0)
-                                                                       .Field(ff => ff.Title, 1.0)
-                                                                )
-                                                         .Query(searchText)
-                                                         .Type(TextQueryType.BestFields)
-                                                         .Operator(Operator.Or)  // Operator.And  dene 
-                                                   )
-                                    && q.Range(r => r.Field(rf => rf.TagNameValues.Count).GreaterThan(2))
-                                    && q.Range(r => r.Field(rf => rf.TagNameValues.Count).GreaterThanOrEquals(3))
-                               )
-                          .Sort(s => s.Descending(f => f.CreatedDate.Date))
-                          .Skip(skipItemCount)
-                          .Take(maxItemCount);
+                //searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>()
+                //          .Query(q =>
+                //                       q.MultiMatch(m => m.Fields(f => f.Field(ff => ff.SearchingArea, 2.0)
+                //                                                       .Field(ff => ff.Title, 1.0)
+                //                                                )
+                //                                         .Query(searchText)
+                //                                         .Type(TextQueryType.BestFields)
+                //                                         .Operator(Operator.Or)  // Operator.And  dene 
+                //                                   )
+                //                    && q.Range(r => r.Field(rf => rf.TagNameValues.Count).GreaterThan(2))
+                //                    && q.Range(r => r.Field(rf => rf.TagNameValues.Count).GreaterThanOrEquals(3))
+                //               )
+                //          .Sort(s => s.Descending(f => f.CreatedDate.Date))
+                //          .Skip(skipItemCount)
+                //          .Take(maxItemCount);
 
 
 
@@ -293,15 +295,15 @@ namespace MyBlogProject.Business.Concrete.Manager
                 //                        );
 
 
-                searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>()
-    .Query(q => q
-        .Bool(b => b
-            .Should(
-                bs => bs.Term(p => p.UserId, 1),
-                bs => bs.Term(p => p.CategoryId, 5)
-            ).MinimumShouldMatch(3)
-        )
-    );
+    //            searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>()
+    //.Query(q => q
+    //    .Bool(b => b
+    //        .Should(
+    //            bs => bs.Term(p => p.UserId, 1),
+    //            bs => bs.Term(p => p.CategoryId, 5)
+    //        ).MinimumShouldMatch(3)
+    //    )
+    //);
                 /* bool tipinde sorgular
                 
                  must=>Cümle (sorgu) eşleşen belgelerde görünmelidir ve skora katkıda bulunacaktır.
@@ -342,54 +344,63 @@ namespace MyBlogProject.Business.Concrete.Manager
                 //}
 
 
-
-
-
 //                searchQuery = new Nest.SearchDescriptor<PostElasticIndexDto>().Query(q =>
 //q.QueryString(qs =>
 //qs.DefaultField(d => d.CategoryName).Query(" c# sql server ".Trim()).DefaultOperator(Operator.And)));
+ 
+
+               var dataJson= _elasticSearchService.ToJson<PostElasticIndexDto>(searchQuery); 
 
 
-
-               var dataJson= _elasticSearchService.ToJson<PostElasticIndexDto>(searchQuery);
 
                 //, 0, 10,null, "<strong style=\"color: red;\">", "</strong>", false, new string[] { "Title" }
                 var searchResultData = await _elasticSearchService.SimpleSearchAsync<PostElasticIndexDto, int>(indexName, searchQuery);
+                                                                                                    
                 if (searchResultData.Hits.Count > 0)
-                { var data = JsonConvert.SerializeObject(searchResultData); }
+                { var data = JsonConvert.SerializeObject(searchResultData); } 
 
-                var midir = from opt in searchResultData.Hits.OrderByDescending(x => x.Score)
+                //var midir = from opt in searchResultData.Hits
+                //            select new PostElasticIndexDto
+                //            {
+                //                Score = (double)opt.Score,
+                //                CategoryName = opt.Source.CategoryName,
+                //                Title = opt.Source.Title,
+                //                UserInfo = opt.Source.UserInfo,
+                //                Suggest = opt.Source.Suggest,
+                //                Url = opt.Source.Url,
+                //                Id = opt.Source.Id,
+                //                CategoryId = opt.Source.CategoryId,
+                //                CreatedDate = opt.Source.CreatedDate,
+                //                UserId = opt.Source.UserId,
+                //                TagNameValues = opt.Source.TagNameValues,
+                //                TagNameIds = opt.Source.TagNameIds
+                //            };
+
+
+                var result2 = from opt in searchResultData.Documents
                             select new PostElasticIndexDto
                             {
                                 Score = (double)opt.Score,
-                                CategoryName = opt.Source.CategoryName,
-                                Title = opt.Source.Title,
-                                UserInfo = opt.Source.UserInfo,
-                                Suggest = opt.Source.Suggest,
-                                Url = opt.Source.Url,
-                                Id = opt.Source.Id,
-                                CategoryId = opt.Source.CategoryId,
-                                CreatedDate = opt.Source.CreatedDate,
-                                UserId = opt.Source.UserId,
-                                TagNameValues = opt.Source.TagNameValues,
-                                TagNameIds = opt.Source.TagNameIds
+                                CategoryName = opt.CategoryName,
+                                Title = opt.Title,
+                                UserInfo = opt.UserInfo,
+                                Suggest = opt.Suggest,
+                                Url = opt.Url,
+                                Id = opt.Id,
+                                CategoryId = opt.CategoryId,
+                                CreatedDate = opt.CreatedDate,
+                                UserId = opt.UserId,
+                                TagNameValues = opt.TagNameValues,
+                                TagNameIds = opt.TagNameIds,
+                                SearchingArea=opt.SearchingArea
                             };
 
-
-                return await Task.FromResult<List<PostElasticIndexDto>>(midir.ToList());
-
-
+                return await Task.FromResult<List<PostElasticIndexDto>>(result2.ToList());
             }
             catch (Exception ex)
             {
                 return await Task.FromException<List<PostElasticIndexDto>>(ex);
             }
-
-
-
-
-
-            throw new NotImplementedException();
         }
 
 
